@@ -11,5 +11,12 @@ pipeline {
         git ‘https://github.com/awssingh07/docker-jerkinspipeline.git'
       }
     }
+    stage(‘Building image’) {
+      steps{
+        script {
+          docker.build registry + “:$BUILD_NUMBER”
+        }
+      }
+    }
   }
 }
