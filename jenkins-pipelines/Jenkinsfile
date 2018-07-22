@@ -1,20 +1,20 @@
 pipeline {
   environment {
-    registry = “saran07/docker-test”
-    registryCredential = ‘dockerhub’
-    dockerImage = ‘’
+    registry = "saran07/docker-test"
+    registryCredential = 'dockerhub'
+    dockerImage = ''
   }
   agent any
   stages {
-    stage(‘Cloning Git’) {
+    stage('Cloning Git') {
       steps {
-        git ‘https://github.com/awssingh07/docker-jerkinspipeline.git'
+        git 'https://github.com/awssingh07/docker-jerkinspipeline.git'
       }
     }
-    stage(‘Building image’) {
+    stage('Building image') {
       steps{
         script {
-          docker.build registry + “:$BUILD_NUMBER”
+          docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
