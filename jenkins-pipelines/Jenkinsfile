@@ -11,3 +11,5 @@ pipeline {
         git ‘https://github.com/awssingh07/docker-jerkinspipeline.git'
       }
     }
+  }
+}
